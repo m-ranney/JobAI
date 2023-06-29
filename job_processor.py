@@ -20,7 +20,7 @@ def process_url(url):
     # Fetch and parse webpage using langchain webbaseloader
     loader = WebBaseLoader(url)
     jd_chunks = loader.load_and_split()
-    jd_text = ' '.join(chunk.text for chunk in jd_chunks)
+    jd_text = '\n'.join(chunk.page_content for chunk in jd_chunks)
   
     print(jd_text)
 
