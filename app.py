@@ -1,25 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
-
-
-# This route is for all URLs submitted by the user for job descriptions
-@app.route('/add_job', methods=['POST'])
-def add_job():
-    url = request.form.get('url')
-    
-    if url is None:
-        return {"error": "No url provided"}, 400
-
-    # Here we will use job_processor to process the URL
-    # job_details = process_url(url)
-
-    # For now, we'll just return a placeholder response
-    return {"message": "Job added successfully", "url": url}
+    job_data = None
+    if request.method == 'POST':
+        url = request.form.get('url')
+        job_data = process_url(url)
+    return render_template('index.html', job_data=job_data)
 
 
 if __name__ == '__main__':
