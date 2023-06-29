@@ -13,11 +13,38 @@
             <button type="submit">Submit</button>
         </form>
         {% if job_data %}
-        <h2>Job Data:</h2>
-        <p>Job Data: {{ job_data }}</p>
-        <p>Job Title: {{ job_data.job_info[0].job_title }}</p>
-        <p>Company: {{ job_data.job_info[0].company }}</p>
-        <p>Location: {{ job_data.job_info[0].location }}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Job Data:</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Job Title</th>
+                                    <th>Company Name</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ job_data.job_info[0].job_title }}</td>
+                                    <td>{{ job_data.job_info[0].company }}</td>
+                                    <td>{{ job_data.job_info[0].location }}</td>
+                                    <td>
+                                        <select class="form-select" id="status" name="status">
+                                            <option selected>Open</option>
+                                            <option value="Applied">Applied</option>
+                                            <option value="Interviewing">Interviewing</option>
+                                            <option value="Rejected">Rejected</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         {% endif %}
   </body>
 </html>
