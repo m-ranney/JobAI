@@ -8,7 +8,38 @@
 <body>
     <div class="container">
         <h1 class="mt-5">JobAI</h1>
-        <!-- Table will go here -->
+        <div class="row mt-4">
+            <div class="col">
+                <!-- Job application form -->
+                <form id="job-form">
+                    <div class="form-group">
+                        <label for="url">Job Description URL:</label>
+                        <input type="url" class="form-control" id="url" placeholder="Enter URL" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col">
+                <!-- Job applications table -->
+                <table class="table" id="jobs-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Job Title</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Job applications will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
