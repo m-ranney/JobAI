@@ -6,12 +6,16 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>JobAI</h1>
-        <form method="POST" action="/">
-            <label for="url">Job Description URL:</label>
-            <input type="text" id="url" name="url">
-            <button type="submit">Submit</button>
-        </form>
+        <div class="container mt-5">
+            <h1>JobAI</h1>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="url">Job Description URL:</label>
+                    <input type="text" class="form-control" id="url" name="url" placeholder="Enter job description URL">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
         {% if job_data %}
             <div class="container">
                 <div class="row">
