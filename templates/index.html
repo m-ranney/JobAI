@@ -15,9 +15,9 @@
         {% if job_data %}
         <h2>Job Data:</h2>
         <p>Job Data: {{ job_data }}</p>
-        <p>Job Title: {{ job_data.job_title }}</p>
-        <p>Company: {{ job_data.company }}</p>
-        <p>Location: {{ job_data.location }}</p>
+        <p>Job Title: {{ job_data.job_info[0].job_title }}</p>
+        <p>Company: {{ job_data.job_info[0].company }}</p>
+        <p>Location: {{ job_data.job_info[0].location }}</p>
         {% endif %}
   </body>
 </html>
